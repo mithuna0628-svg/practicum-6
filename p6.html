@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BizHive Business - Positioning Elements</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f2;
+    color: #263b32;
+    padding: 20px;
+}
+
+h2 {
+    color: #203c32;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.navbar {
+    background: #203c32;
+    color: white;
+    padding: 18px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.navbar h1 {
+    font-size: 26px;
+}
+
+.navbar p {
+    margin-top: 6px;
+    color: #d5e5dc;
+}
+
+.fitness-box {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    height: 350px;
+    margin: auto;
+    background: linear-gradient(
+        135deg,
+        #203c32,
+        #4d8068
+    );
+    border-radius: 12px;
+    color: white;
+    overflow: hidden;
+    border: 3px solid #203c32;
+}
+
+.position {
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 6px;
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+}
+
+.bottom-left {
+    bottom: 10px;
+    left: 10px;
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
+.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+#centerText {
+    background: #ffffff;
+    color: #203c32;
+    padding: 18px 25px;
+    border: 2px solid #d5e5dc;
+    border-radius: 10px;
+    min-width: 180px;
+}
+
+#centerText h2 {
+    color: #203c32;
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+#centerText p {
+    font-size: 14px;
+}
+
+.quadrant {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border: 1px dashed rgba(255,255,255,0.4);
+    z-index: 0;
+}
+
+.q1 {
+    top: 0;
+    left: 0;
+}
+
+.q2 {
+    top: 0;
+    right: 0;
+}
+
+.q3 {
+    bottom: 0;
+    left: 0;
+}
+
+.q4 {
+    bottom: 0;
+    right: 0;
+}
+
+.buttons {
+    max-width: 850px;
+    margin: 25px auto;
+    text-align: center;
+}
+
+button {
+    background: #203c32;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #4d8068;
+}
+
+#message {
+    text-align: center;
+    color: #203c32;
+    font-weight: bold;
+    margin: 15px;
+}
+
+.info {
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 20px;
+    background: white;
+    border-left: 5px solid #203c32;
+    border-radius: 8px;
+    line-height: 1.8;
+}
+
+.info h3 {
+    color: #203c32;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .fitness-box {
+        height: 280px;
+    }
+
+    .position {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    #centerText {
+        min-width: 140px;
+        padding: 12px;
+    }
+
+    #centerText h2 {
+        font-size: 17px;
+    }
+
+    button {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .navbar h1 {
+        font-size: 21px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <h1>BizHive Business Hub</h1>
+    <p>Smart Business Management Platform</p>
+</div>
+
+<h2>Positioning Elements</h2>
+
+<div class="fitness-box" id="businessBox">
+
+    <div class="quadrant q1"></div>
+    <div class="quadrant q2"></div>
+    <div class="quadrant q3"></div>
+    <div class="quadrant q4"></div>
+
+    <div class="position top-left">
+        Top Left
+    </div>
+
+    <div class="position top-right">
+        Top Right
+    </div>
+
+    <div class="position bottom-left">
+        Bottom Left
+    </div>
+
+    <div class="position bottom-right">
+        Bottom Right
+    </div>
+
+    <div class="position center" id="centerText">
+        <h2>BizHive Business</h2>
+        <p>Manage • Connect • Grow</p>
+    </div>
+
+</div>
+
+<h3 style="text-align:center; margin-top:25px;">
+    Try It Yourself
+</h3>
+
+<div class="buttons">
+
+    <button onclick="moveText('top-left')">
+        Top Left
+    </button>
+
+    <button onclick="moveText('top-right')">
+        Top Right
+    </button>
+
+    <button onclick="moveText('bottom-left')">
+        Bottom Left
+    </button>
+
+    <button onclick="moveText('bottom-right')">
+        Bottom Right
+    </button>
+
+    <button onclick="moveText('center')">
+        Centered
+    </button>
+
+</div>
+
+<p id="message">
+    Click a button to change the BizHive title position.
+</p>
+
+<div class="info">
+
+    <h3>Positioning Concepts</h3>
+
+    <p><b>1. Position Types:</b>
+    The position property controls how elements are placed on a webpage.</p>
+
+    <p><b>2. Position Values:</b>
+    Top, bottom, left and right control the element's location.</p>
+
+    <p><b>3. Z-Index:</b>
+    Controls the stacking order of overlapping elements.</p>
+
+    <p><b>4. Responsive Quadrant Layout:</b>
+    Divides the business display into four sections and adjusts to different screen sizes.</p>
+
+</div>
+
+<script>
+
+function moveText(position) {
+
+    const text = document.getElementById("centerText");
+
+    text.className = "position " + position;
+
+    document.getElementById("message").textContent =
+        "BizHive title moved to " +
+        position.replace("-", " ") +
+        " position successfully.";
+
+}
+
+</script>
+
+</body>
+</html>
